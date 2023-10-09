@@ -1,2 +1,2 @@
 # slort
-visualising sorting algorthiams in terminal with the help of golang.
+📊 visualising sorting algorthiams 🧮 in terminal with the help of golang 🐹.
