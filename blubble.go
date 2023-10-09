@@ -6,13 +6,12 @@ import (
 )
 
 func main() {
-	a := []int{23, 23, 1, 5, 58, 8, 8, -2, 44, 3, 0}
-
-	//fmt.Printf("before : %v %d\n\n", a, len(a))
+	a := []int{23, 23, 1, 5, 58, 8}
 
 	//blubble slort
-
-	fmt.Println(a)
+	//show original input
+	fmt.Printf("Input  : %v\n", a)
+	fmt.Printf("Output : %v ", a)
 
 	for i, _ := range a {
 
@@ -20,6 +19,15 @@ func main() {
 		lastIndex := totalIndex - i
 
 		b := a[:lastIndex]
+
+		rem := float64(len(a) - len(b))
+		per := rem / float64(len(a))
+		per = per * 100
+
+		fmt.Printf(" %-3d%%", int(per))
+
+		//hide the cursor
+		fmt.Printf("\u001b[?25l")
 
 		for j, v := range b {
 
@@ -46,7 +54,7 @@ func main() {
 
 			}
 
-			fmt.Printf("\r[")
+			fmt.Print("\rOutput : [")
 
 			for n, _ := range a {
 
@@ -67,16 +75,16 @@ func main() {
 				fmt.Print("\u001b[0m")
 			}
 
-			fmt.Printf("\b]")
-
-			time.Sleep(time.Millisecond * 100)
+			fmt.Print("\b] ")
+			time.Sleep(time.Millisecond * 500)
 
 		}
 
 	}
 
-	fmt.Printf("\r%v\n", a)
+	fmt.Printf("\r\u001b[2KOutput : %v %d %%\n", a, 100)
 
-	//fmt.Printf("\nafter  : %v %d\n", a, len(a))
+	//unhide the cursor
+	fmt.Printf("\u001b[?25h")
 
 }
