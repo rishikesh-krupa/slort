@@ -26,12 +26,9 @@ func main() {
 
 		fmt.Printf(" %-3d%%", int(per))
 
-<<<<<<< HEAD
 		//hide the cursor
 		fmt.Printf("\u001b[?25l")
 
-=======
->>>>>>> b6e9c04450851bb642bde34d0a84aed9f5147bdb
 		for j, v := range b {
 
 			var (
@@ -86,11 +83,8 @@ func main() {
 	}
 
 	fmt.Printf("\r\u001b[2KOutput : %v %d %%\n", a, 100)
-<<<<<<< HEAD
 
 	//unhide the cursor
 	fmt.Printf("\u001b[?25h")
-=======
->>>>>>> b6e9c04450851bb642bde34d0a84aed9f5147bdb
 
 }
